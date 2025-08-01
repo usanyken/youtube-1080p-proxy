@@ -26,3 +26,11 @@ jobs:
               repo: context.repo.repo,
               body: '❌ 更新失败！请检查 [Action日志](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})'
             })
+
+            on:
+  workflow_dispatch:
+    inputs:
+      resolution:
+        description: '目标分辨率'
+        required: true
+        default: '1080p'
